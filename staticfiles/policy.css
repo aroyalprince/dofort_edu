@@ -1,0 +1,23 @@
+
+  .container {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1, h2 {
+    color: #213555;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
+  a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }

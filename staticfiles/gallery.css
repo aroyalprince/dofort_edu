@@ -1,0 +1,54 @@
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    color: #333;
+    letter-spacing: 1px;
+  }
+
+  .masonry-gallery {
+    column-count: 4;
+    column-gap: 20px;
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 1200px) {
+    .masonry-gallery {
+      column-count: 3;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .masonry-gallery {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .masonry-gallery {
+      column-count: 1;
+    }
+  }
