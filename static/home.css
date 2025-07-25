@@ -122,9 +122,7 @@ body::after {
 
   @media (max-width: 768px) {
 
-    body{
-      width:650px
-    }
+   
     .carousel {
       width:650px;      
     }
