@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: defortedu
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn defortedu.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: defortedu.settings
+      - key: SECRET_KEY
+        value: django-insecure-^92r^62q1!0#*3m%_c)5k#$u@#ohwx4&on_f(2z8bb(jmjzv#+
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: defortedu.onrender.com
