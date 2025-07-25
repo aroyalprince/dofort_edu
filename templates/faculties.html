@@ -1,0 +1,183 @@
+
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'faculties.css' %}">
+{% endblock %}
+{% block title %} Faculties | Dofort Edu {% endblock title %}
+
+{% block body%}
+<div class="course-container">
+  <!-- Faculty 1 -->
+  <div class="course-card" data-id="amit">
+    <div class="course-image" style="background-image: url({% static 'images/amit.WebP' %})"></div>
+    <div class="course-description">
+      <div class="course-header">
+        <strong>Amit Shaw</strong>
+        <button class="dropdown-toggle" aria-label="Toggle info">
+          <span class="chevron"></span>
+        </button>
+      </div>
+      <p class="para">- Expert in Business Accounting & Taxation</p>
+      <div class="extra-info">
+        <div class="profile-header">
+          Mr. Amit Shaw is the Founder, Director, and Lead Faculty at Dofort Edu, a reputed centre for computer and professional training.
+          <p>Over <strong>12 years of rich experience</strong> in business accounting, taxation, and ERP systems — the driving force behind Dofort Edu’s practical and career-oriented teaching approach.</p>
+        </div>
+      
+        <div class="specializations">
+          <h3> Areas of Specialization</h3>
+          <ul>
+            <li><strong>Business Accounting (Practical Focus):</strong> Training in real-world processes—journal entries, ledgers, trial balances, balance sheets, and P&L statements.</li>
+            <li><strong>GST Returns Filing:</strong> Hands-on training for GSTR-1, GSTR-3B, reconciliation, and portal filing with real-time examples.</li>
+            <li><strong>TDS & TCS Compliance:</strong> In-depth instruction in deductions, collections, and compliance with the latest laws.</li>
+            <li><strong>Income Tax Return (ITR) Filing:</strong> Live portal training for ITR filing for individuals and businesses with accurate planning.</li>
+            <li><strong>SAP FICO:</strong> Certified SAP training in Financial Accounting & Controlling modules—perfect for ERP-based roles.</li>
+          </ul>
+        </div>
+      
+        <div class="vision">
+          <h3> Leadership & Vision</h3>
+          <p>
+            Under his leadership, Dofort Edu has become a trusted institute for practical, job-ready education. He believes in <em>“learning by doing”</em>, preparing students for real business environments—not just exams.
+          </p>
+        </div>
+      
+        <div class="philosophy">
+          <h3>Teaching Philosophy</h3>
+          <p>
+            Known for his clear explanations, hands-on examples, and interactive sessions, Mr. Shaw merges theory with live portals and tools, simplifying complex tax and accounting concepts.
+          </p>
+          <p class="closing">
+            With his guidance, students don’t just learn—they gain <strong>confidence</strong>, <strong>skills</strong>, and become <strong>professionally ready</strong> to thrive in the digital economy.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Faculty 2 -->
+  <div class="course-card" data-id="ujjal">
+    <div class="course-image" style="background-image: url({% static 'images/ujjal.WebP' %})"></div>
+    <div class="course-description">
+      <div class="course-header">
+        <strong>Mr. Ujjal Banik</strong>
+        <button class="dropdown-toggle" aria-label="Toggle info">
+          <span class="chevron"></span>
+        </button>
+      </div>
+      <p class="para">– Senior Technical Trainer.</p>
+      <div class="extra-info">
+        <div class="profile-header">
+          <p>
+            A highly skilled and experienced faculty member at <strong>Dofort Edu</strong>, specializing in the technical domain of computer education. With over <strong>5 years of teaching experience</strong>, Mr. Banik brings deep knowledge, practical insights, and a student-friendly approach to every classroom.
+          </p>
+        </div>
+      
+        <div class="specializations">
+          <h3> Areas of Expertise</h3>
+          <ul>
+            <li><strong>Basic Computer Training:</strong> Building strong foundational skills in MS Office, internet usage, and essential digital tools.</li>
+            <li><strong>Advanced Excel:</strong> Expert instruction in formulas, pivot tables, dashboards, macros, and Excel automation for corporate environments.</li>
+            <li><strong>Tally Prime with GST & TDS:</strong> Practical learning in GST billing, TDS compliance, inventory, payroll, and report generation using Tally Prime.</li>
+            <li><strong>GST Return Filing:</strong> Training students to generate and file GST returns with accuracy using Tally Prime and ensuring proper compliance.</li>
+          </ul>
+        </div>
+      
+        <div class="philosophy">
+          <h3>Teaching Style</h3>
+          <p>
+            Mr. Banik is known for his clarity, patience, and hands-on mentoring. His ability to bridge theoretical concepts with real-world applications makes his classes highly impactful and easy to follow for students of all levels.
+          </p>
+        </div>
+      
+        <div class="commitment">
+          <h3> Commitment to Students</h3>
+          <p>
+            Passionate about empowering students with technical skills aligned to today’s job market, Mr. Banik ensures every learner receives personal guidance and practical exposure throughout their course journey.
+          </p>
+          <p class="closing">
+            With Mr. Ujjal Banik as your guide, you're not just learning software—you’re preparing for a <strong>successful career</strong> in the digital and accounting world.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Faculty 3 -->
+  <div class="course-card" data-id="prince">
+    <div class="course-image" style="background-color: #f6f4d6; background-image: url({% static 'images/prince.WebP' %}); background-size: 100%;"></div>
+    <div class="course-description">
+      <div class="course-header">
+        <strong>Mr.Prince Kumar</strong>
+        <button class="dropdown-toggle" aria-label="Toggle info">
+          <span class="chevron"></span>
+        </button>
+      </div>
+      <p class="para">- Programming & Web Designing Trainer</p>
+      <div class="extra-info">
+        <div class="profile-header">
+          <p>
+            A talented and passionate faculty member at <strong>Dofort Edu</strong>, Mr. Kumar specializes in <strong>Programming Languages</strong> and <strong>Web Designing</strong>. With a solid background in computer science, he brings both <strong>technical expertise</strong> and <strong>creative flair</strong> to every classroom session.
+          </p>
+        </div>
+      
+        <div class="specializations">
+          <h3>Areas of Expertise</h3>
+          <ul>
+            <li><strong>Programming Languages:</strong> In-depth training in C, C++, Java, Python, and foundational logic building for development and competitive programming.</li>
+            <li><strong>Web Designing:</strong> Teaches students to build modern, responsive websites using HTML, CSS, JavaScript, and Bootstrap. Introduces frameworks and tools for real-world development.</li>
+            <li><strong>Project-Based Learning:</strong> Includes live projects like personal portfolios, business websites, and web apps to build practical skills and confidence.</li>
+          </ul>
+        </div>
+      
+        <div class="philosophy">
+          <h3>Teaching Style</h3>
+          <p>
+            Mr. Kumar is known for his <strong>interactive, project-driven approach</strong>. He simplifies complex coding concepts into clear, relatable steps and promotes <strong>innovation</strong>, <strong>problem-solving</strong>, and <strong>independent thinking</strong> in every class. His friendly and supportive style makes him approachable and effective.
+          </p>
+        </div>
+      
+        <div class="commitment">
+          <h3>Commitment to Students</h3>
+          <p>
+            Dedicated to preparing students for success in the tech world, Mr. Kumar nurtures not just technical skills but also confidence and creativity. Whether you're a beginner or advancing your development skills, his mentorship ensures you are <strong>industry-ready</strong>.
+          </p>
+          <p class="closing">
+            At Dofort Edu, <strong>Mr. Prince Kumar</strong> is the go-to mentor for anyone passionate about programming, web design, and turning ideas into digital reality.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- JS for dropdown functionality -->
+<script>
+  const dropdownButtons = document.querySelectorAll('.dropdown-toggle');
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const card = e.target.closest('.course-card');
+
+      // Collapse others
+      document.querySelectorAll('.course-card').forEach(c => {
+        if (c !== card) {
+          c.classList.remove('expanded');
+          c.querySelector('.dropdown-toggle')?.classList.remove('open');
+        }
+      });
+
+      // Toggle current card
+      card.classList.toggle('expanded');
+      button.classList.toggle('open');
+    });
+  });
+</script>
+{% endblock %}

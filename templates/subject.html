@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'subject.css' %}">
+{% endblock %}
+{% block title %} Courses | Dofort Edu {% endblock title %}
+
+{% block body%}
+
+  <div class="container">
+
+    <h1>Course Brochure</h1>
+
+    <!-- BCA Section -->
+    <div class="subject-card bca-section" id= "bca">
+      <h2>BCA</h2>
+      <ul>
+        <li>Fundamentals of Computer, Windows</li>
+        <li>MS Word, MS Excel (types of data, Data Formatting, Tables, Cell Reference, Conditional Formatting, etc.)</li>
+        <li>MS PowerPoint, Internet, Google Chrome, Outlook & Gmail</li>
+        <li>Type of Data</li>
+        <li>Data Formatting</li>
+        <li>Cell Reference</li>
+        <li>Fill Series</li>
+        <li>Flash Fill</li>
+        <li>Number Formnating</li>
+        <li>Conditional Formatting</li>
+        <li>Comments</li>
+        <li>Projects & Assignments</li>
+      </ul>
+    </div>
+
+    <!-- CCA Section -->
+    <div class="subject-card cca-section" id="cca">
+      <h2>CCA</h2>
+      <ul>
+        <li>Statistical Functions, Logical Functions</li>
+        <li>V-Lookup, H-Lookup, Pivot Table, Data Validation, Data Security</li>
+        <li>Financial Function, Auditing, Importing Data</li>
+        <li>Projects & Assignments</li>
+      </ul>
+    </div>
+
+    <!-- Business Accounting -->
+    <div class="subject-card business-accounting-section" id="businessacc">
+      <h2>Business Accounting</h2>
+      <ul>
+        <li>Introduction to Accounting, Principles & Events</li>
+        <li>Ledger, Trial Balance, Reconciliation, Year-end Adjustments</li>
+        <li>Preparation of Financial Statements</li>
+      </ul>
+    </div>
+
+    <!-- Tally Expert -->
+    <div class="subject-card tally-expert-section" id="tally">
+      <h2>Tally Expert</h2>
+      <ul>
+        <li>Accounting, Costing & Budgeting, Inventory, Payroll</li>
+        <li>GST Entry, TDS Entry, Manufacturing, Reporting</li>
+        <li>Projects & Assignments</li>
+      </ul>
+    </div>
+
+    <!-- GST Expert -->
+    <div class="subject-card gst-expert-section" id="gst">
+      <h2>GST Expert</h2>
+      <ul>
+        <li>Theory of GST</li>
+        <li>GST Entries in Tally, GST Returns, GST Registration</li>
+        <li>Projects & Assignments</li>
+      </ul>
+    </div>
+
+    <!-- TDS -->
+    <div class="subject-card tds-section" id="tds">
+      <h2>TDS</h2>
+      <ul>
+        <li>Theory of TDS</li>
+        <li>Accounting of TDS, TDS Entries in Tally</li>
+      </ul>
+    </div>
+
+    <div class="subject-card itr-section" id="itr">
+        <h2>ITR Filing<h2>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="subject-card Programming-section" id="Programming">
+        <h2>Python and C Programming Language<h2>
+        <ul>
+          <li>
+            <h4>Python Programming</h4>
+            
+              <ul style="font-size: small;">
+                <li>Introduction to Python</li>
+                <li>Variables, Data Types & Operators</li>
+                <li>Control Flow</li>
+                <li>Functions and Modules</li>
+                <li>Strings & String Methods</li>
+                <li>Data Structures</li>
+                <li>OOps (Object-Oriented Programming)</li>
+                <li>Project using Python</li>
+              </ul>
+            
+          </li>
+          <li>
+            <h4>C Programming</h4>
+            <ul style="font-size: small;">
+              <li>Introduction to C</li>
+              <li>Variables, Data Types & Operators</li>
+              <li> Input and Output</li>
+              <li>Control Statements</li>
+              <li>Arrays and Strings</li>
+              <li>Functions in C</li>
+              <li>Pointers</li>
+              <li>Structures and Unions</li>
+              <li>File Handling</li>
+              <li>Dynamic Memory Allocation</li>
+              <li>Preprocessor Directives</li>
+              <li>Mini Projects in C</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="subject-card web-section" id="web">
+        <h2>Web Development<h2>
+        <ul style="font-size: medium;">
+          <li>Basics of Web Development</li>
+          <li>Frontend Development (Client-Side)</li>
+          <li>Frontend Libraries / Frameworks</li>
+          <li>UI/UX Libraries & Tools</li>
+          <li>Version Control System</li>
+          <li>Backend Development (Server-Side)</li>
+          <li>Database</li>
+          <li>Authentication & Security</li>
+          <li>Deployment & Hosting</li>
+          <li>APIs & JSON</li>
+          <li> Projects (For Practice)</li>
+          <li>Testing</li>
+        </ul>
+      </div>
+  </div>
+
+  <script>
+    
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Page Loaded. You can add dynamic behavior here.");
+  });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Get the hash (e.g., "#bca")
+      const hash = window.location.hash;
+    
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          // Scroll to the element smoothly (optional, fallback)
+          target.scrollIntoView({ behavior: 'smooth' });
+    
+          // Add zoom class
+          target.classList.add("zoom-effect");
+    
+          // Remove the effect after some time (e.g., 1.5 seconds)
+          setTimeout(() => {
+            target.classList.remove("zoom-effect");
+          }, 1500);
+        }
+      }
+    });
+  
+    
+  </script>
+
+{% endblock body%}

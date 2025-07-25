@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'home.css' %}">{% endblock %}
+{% block title %} Home | Dofort Edu{% endblock title %}
+{% block body %}
+
+
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    {% for i in "0123456789"|make_list %}
+  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+{% endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/BCA.WebP' %}" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>BCA</h5>
+        <p>Empower yourself with essential computer skills for the digital age.</p>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="{% static 'images/Accounting.WebP' %}" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Business Accounting</h5>
+        <p>Master the fundamentals of business accounting to drive smart financial decisions.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'images/tally.WebP' %}" class="d-block w-100" alt="Slide 4">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Tally</h5>
+        <p>Gain hands-on expertise in Tally, GST, and TDS to manage finances with confidence and compliance.</p>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="{% static 'images/GST.WebP' %}" class="d-block w-100" alt="Slide 6">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>GST</h5>
+        <p>Unlock your tech career with in-demand skills in Web Development and Programming Languages.</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'images/ITR.WebP' %}" class="d-block w-100" alt="Slide 9">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>ITR Filing</h5>
+        <p>Protect digital infrastructure and fight cyber threats with expert training.</p>
+      </div>
+    </div>
+    <!-- New Slide 7 -->
+    <div class="carousel-item">
+      <img src="{% static 'images/website.WebP' %}" class="d-block w-100" alt="Slide 7">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Web Development, Programming Languages</h5>
+        <p>Discover insights with data-driven decision-making skills.</p>
+      </div>
+    </div>
+
+    
+
+    <div class="carousel-item">
+      <img src="{% static 'images/web_f.WebP' %}" class="d-block w-100" alt="Slide 7">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Programming Languages</h5>
+        <p>Discover insights with data-driven decision-making skills.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<div class="about-dofort-container">
+  <div class="about-dofort" id="aboutDofort">
+    <p>
+      <strong>Dofort Edu</strong> is a forward-thinking educational platform dedicated to empowering students with practical, industry-relevant skills. Focused on excellence and innovation, Dofort Edu offers a range of professional courses in fields like web development, programming, data science, and more. With experienced faculty, interactive learning methods, and a student-centric approach, it bridges the gap between academic knowledge and real-world applications. Whether you're a beginner or looking to upskill, Dofort Edu provides flexible learning at your own pace, both online and offline. Its mission is to nurture talent, boost confidence, and build a brighter future through accessible, high-quality education for all learners.
+    </p>
+  </div>
+</div>
+
+<div class="testimonial-carousel">
+  <div class="carousel-images">
+    <div class="image active" data-index="0">
+      <img src="{% static 'images/sunil_shaw.WebP' %}" alt="Sunil Shaw" />
+    </div>
+    <div class="image" data-index="1">
+      <img src="{% static 'images/joy_rang.WebP' %}" alt="Joy Rang" />
+    </div>
+    <div class="image" data-index="2">
+      <img src="{% static 'images/neha_bag.WebP' %}" alt="Neha Bag" />
+    </div>
+    <div class="image" data-index="3">
+      <img src="{% static 'images/vikram_pandit.WebP' %}" alt="Vikram Pandit" />
+    </div>
+    <div class="image" data-index="4">
+      <img src="{% static 'images/riya_shaw.WebP' %}" alt="Riya Shaw" />
+    </div>
+  </div>
+
+  <div class="carousel-content">
+    <button class="nav left" onclick="prevSlide()">❮</button>
+    <div class="testimonial-text">
+      <h2 id="name">Sunil Shaw</h2>
+      <p id="designation">Options Dealer</p>
+      <p id="company">Credent securities ltd</p>
+      <p id="quote">
+        "Dofort Edu has completely transformed the way I see learning. The faculty is supportive, the teaching style is interactive, and the hands-on experience with projects has made me confident in my technical skills."
+      </p>
+    </div>
+    <button class="nav right" onclick="nextSlide()">❯</button>
+  </div>
+</div>
+<div class="bottom-img"></div>
+<script>
+
+   const carouselElement = document.querySelector('#carouselExampleCaptions');
+    const carousel = new bootstrap.Carousel(carouselElement, {
+      interval: 3000,  
+      ride: 'carousel'
+    }); 
+  
+    
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(document.getElementById('aboutDofort'));
+
+  const testimonials = [
+  {
+    name: "Sunil Shaw",
+    designation: "Options Dealer ",
+    company: "Credent securities ltd",
+    quote:
+      "Dofort Edu has completely transformed the way I see learning. The faculty is supportive, the teaching style is interactive, and the hands-on experience with projects has made me confident in my technical skills.",
+  },
+  {
+    name: "Joy Rang",
+    designation: "Accountant",
+    company: "Aarnaa steel | Shree Dhatree Steel",
+    quote:
+      "As someone from a commerce background, I always feared accounting software. But the Tally with GST course at Dofort Edu was designed in such a simple and practical way that I could understand and apply everything in real time!",
+  },
+  {
+    name: "Neha Bag",
+    designation: "Accountant",
+    company: "East India Marketing Company",
+    quote:
+      "I never thought accounting could be so interesting! The way the Dofort Edu team teaches with real-life business case studies and practical examples made all the difference.",
+  },
+  {
+    name: "Vikram Kumar Pandit",
+    designation: "accountant",
+    company: "Supreme Electric Corporation",
+    quote:
+      "The Business Accounting course at Dofort Edu was a turning point in my career. I now understand how to manage ledgers, balance sheets, and financial reports efficiently. The practical assignments made the concepts crystal clear.",
+  },
+  {
+    name: "Riya shaw",
+    designation: "Executive Assistant",
+    company: "Vedika Exports Tea Pvt. Led.",
+    quote:
+      "Tally and GST training at Dofort Edu was hands-on and job-oriented. I was able to start working as an accountant right after completing the course. The trainers are very knowledgeable and always ready to help.",
+  },
+];
+
+let currentIndex = 0;
+
+function updateTestimonial(index) {
+  document.getElementById("name").textContent = testimonials[index].name;
+  document.getElementById("designation").textContent = testimonials[index].designation;
+  document.getElementById("company").textContent = testimonials[index].company;
+  document.getElementById("quote").textContent = testimonials[index].quote;
+
+  document.querySelectorAll(".image").forEach((imgDiv) => {
+    imgDiv.classList.remove("active");
+  });
+  document.querySelector(`.image[data-index="${index}"]`).classList.add("active");
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  updateTestimonial(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+  updateTestimonial(currentIndex);
+}
+
+// Initialize first slide
+updateTestimonial(currentIndex);
+
+// Auto-change every 3 seconds
+setInterval(nextSlide, 3000);
+
+</script>
+{% endblock %}
+
+

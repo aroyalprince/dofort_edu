@@ -1,0 +1,163 @@
+
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-section {
+    flex: 2;
+    padding-right: 30px;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  h1 .blue {
+    color: #213555;
+  }
+  
+  h1 .orange {
+    color: #f88c1f;
+  }
+  
+  .author {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .subtitle {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .quote {
+    font-size: 2.5rem;
+    color: #f88c1f;
+    margin-bottom: 10px;
+  }
+
+  .quote_1 {
+    font-size: 2.5rem;
+    color: #f88c1f;
+    rotate: 180deg;
+  }
+  
+ .about_institute h2{
+  margin-left: 20rem;
+ }
+  
+  ol {
+    padding-left: 20px;
+    margin-top: 15px;
+  }
+  
+  ol li {
+    margin-bottom: 10px;
+  }
+  
+
+  .container_1 {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #f9f9ff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.about_institute h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about_institute h2 span {
+  color: #213555;
+}
+
+.about_institute .intro,
+.about_institute .closing,
+.about_institute .join {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.course_list {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  border-left: 5px solid #213555;
+  margin-bottom: 30px;
+}
+
+.course_list h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #213555;
+}
+
+.course_list ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.course_list ul li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.course_list ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #213555;
+  font-weight: bold;
+}
+
+.about_institute strong {
+  color: #444;
+}
+
+@media screen and (max-width: 768px) {
+  .container_1 {
+    padding: 20px;
+  }
+
+  .about_institute h2 {
+    font-size: 1.5rem;
+  }
+
+  .course_list h3 {
+    font-size: 1.1rem;
+  }
+
+  .about_institute h2{
+    margin-left: 10rem;
+   }
+}

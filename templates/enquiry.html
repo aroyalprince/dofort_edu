@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'enquiry.css' %}">
+{% endblock %}
+
+{% block title %}Enquiry | Dofort Edu{% endblock title %}
+
+{% block body%} 
+<div class="enquiry-container">
+    <h2>Enquiry Form</h2>
+    <form class="enquiry-form" method="POST" action="{% url 'submit_enquiry' %}">
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <button type="submit" class="submit-btn">Submit Enquiry</button>
+    </form>
+</div>
+{% endblock body%}

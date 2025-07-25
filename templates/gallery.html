@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'gallery.css' %}">
+{% endblock %}
+{% block title %} Gallery | Dofort Edu {% endblock title %}
+
+{% block body %}
+
+
+  <h1>Dofort Edu Gallery</h1>
+
+  <div class="masonry-gallery">
+    {% for i in image_range %}
+      <div class="gallery-item">
+        <img src="{% static 'images/img' %}{{ i }}.WebP" alt="Image {{ i }}">
+      </div>
+    {% endfor %}
+  </div>
+      
+    
+  </div>
+
+
+{% endblock body%}

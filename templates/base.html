@@ -1,0 +1,506 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> {% block title %} {% endblock title %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="{% static 'images/logo.WebP' %}" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  {% block head %}{% endblock %}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      {% comment %} background-color: #D1D8BE; {% endcomment %}
+      background-color: #F5EFE7;
+      width: 100%;
+      overflow-x: hidden;
+
+    }
+
+   .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #3E5879;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+  position: relative;
+  top: 2rem;
+  left: 0;
+
+  height: 80px;
+  width: 40rem;
+
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffff;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background-color: #D1D8BE;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  {% comment %} color: #D1D8BE; {% endcomment %}
+  color: white;
+  scale: 1.1;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #D8C4B6;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #3E5879;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: ##F5EFE7;
+  color: #000;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #2c3e50;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  body {
+    width: 650px;
+  }
+
+  .navbar {
+    width: 650px;
+    border-radius: 7%;
+    background-color: rgba(255, 255, 255, 0); 
+  padding: 20px;
+  border-radius: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 35%;
+    height: 100%;
+    background-color: #3E5879;
+    padding-top: 120px;
+    padding-left: 2rem;
+    gap: 1.5rem;
+    transition: left 0.4s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 112.5px;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(40, 40, 40, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    display: none;
+  }
+
+
+  .overlay.active {
+    display: block;
+  }
+
+
+
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+    
+}
+
+    .footer {
+        {% comment %} background-color: #A7C1A8; {% endcomment %}
+        background-color: #213555;
+        {% comment %} color: #2c3e50; {% endcomment %}
+        color: white;
+        padding-top: 2rem ;
+        font-family: 'Inter', sans-serif;
+        border-top: 1px solid #d1e7dd;
+      }
+    
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 1.5rem;
+      }
+    
+      .footer-section {
+        flex: 1 1 200px;
+        margin: 1rem;
+      }
+    
+      .footer-section h3, .footer-section h4 {
+        margin-bottom: -0.1px;
+      }
+    
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+    
+      .footer-section ul li {
+        margin-bottom: 0.6rem;
+      }
+    
+      .footer-section ul li a {
+        text-decoration: none;
+        {% comment %} color: #2c3e50; {% endcomment %}
+        color: white;
+        transition: color 0.3s ease;
+      }
+    
+      .footer-section ul li a:hover {
+        color: #D1D8BE;
+      }
+      
+      .mail a{
+        text-decoration: none; 
+        color: white;
+        transition: color 0.3s ease;
+      }
+      .mail a:hover{
+        
+          color: #D1D8BE;
+      }
+
+      .map a{
+        text-decoration: none; 
+        color: white;
+        transition: color 0.3s ease;
+        
+      }
+      .map a:hover{
+        
+          color: #D1D8BE;
+      }
+
+      .logo{
+        width:150px;
+        
+      }
+    
+
+      .top-button {
+        {% comment %} background-color: #D1D8BE; {% endcomment %}
+        background-color: #3E5879;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+      }
+    
+      .top-button:hover {
+        background-color:  rgb(216, 196, 182);
+      }
+      .p1{
+        font-style: italic;
+        font-size: 12px;
+        color: gold;
+        margin-left: 20px;
+      }
+      .footer-bottom {
+        text-align: center;
+        padding: 1rem;
+        display:flex;
+        background-color: #3E5879;
+        font-size: 0.9rem;
+      }
+
+      .developer{
+        position:absolute;
+        left:80%;
+      }
+      
+       @media (max-width: 768px) {
+        .footer{
+          width:650px;
+        }
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+        }
+    
+        .footer-section {
+          margin: 1rem 0;
+        }
+        .logo{
+          margin-left:17rem;
+        }
+        .footer-bottom{
+          flex-direction: column;
+          align-items: center;
+        }
+        .developer{
+          position:relative;
+          left:0;
+          margin-top: 10px;
+        }
+      } 
+      .footer-section ul{
+        margin-top: 20px;
+      }
+  </style>
+  
+</head>
+<body>
+
+  <div class="overlay" id="overlay"></div>
+
+<nav class="navbar">
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'courses' %}">Courses</a></li>
+    <li><a href="{% url 'faculties' %}">Faculties</a></li>
+    <li><a href="{% url 'enquiry' %}">Enquiry</a></li>
+    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+  </ul>
+</nav>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const overlay = document.getElementById('overlay');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+
+  {% block body%} {% endblock body%}
+
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Dofort Edu</h3>
+        <p class="p1">...always be updated</p>
+        <div class="logo">
+          <img src="{% static 'images/logo.WebP' %}" alt="Dofort Logo" style=" width: 150px; height:150px;">
+        </div>
+          <div class="map" style=" margin-top : 20px;">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 
+              <a href="https://www.google.com/maps?q=33/34,+PD+Ganendra+Prasad+Goswami+Sarani,+Durgapur+Colony,+Block+G,+New+Alipore,+Kolkata,+West+Bengal+700053" 
+                 target="_blank">
+                33/34, PD Ganendra Prasad Goswami Sarani, Durgapur Colony, Block G, New Alipore, Kolkata, West Bengal 700053
+              </a>
+            </p>
+          </div>
+          
+        <p style = "width: 300px;"><i class="fas fa-phone-alt"></i> 9239344707 | 8420222676</p>
+        <p class="mail"><i class="fas fa-envelope"></i> <a href="mailto:dofortedu@gmail.com">dofortedu@gmail.com</a></p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/share/1YfxSwSTcT/"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          {% comment %} <a href="#"><i class="fab fa-youtube"></i></a> {% endcomment %}
+        </div>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'courses' %}">Courses</a></li>
+          <li><a href="{% url 'faculties' %}">Faculties</a></li>
+          <li><a href="{% url 'enquiry' %}">Enquiry</a></li>
+          <li><a href="{% url 'aboutus' %}">About Us</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="{% url 'subject' %}#bca" class="btn">BCA</a></li>
+          <li><a href="{% url 'subject' %}#cca" class="btn">CCA</a></li>
+          <li><a href="{% url 'subject' %}#tally" class="btn">Tally Expert</a></li>
+          <li><a href="{% url 'subject' %}#gst" class="btn">GST Expert</a></li>
+          <li><a href="{% url 'subject' %}#tds" class="btn">TDS</a></li>
+          <li><a href="{% url 'subject' %}#itr" class="btn">ITR Filing</a></li>
+          <li><a href="{% url 'subject' %}#businessacc" class="btn">Business Accounting</a></li>
+          <li><a href="{% url 'subject' %}#Programming" class="btn"> Programming Languages</a></li>
+          <li><a href="{% url 'subject' %}#web" class="btn">Web Development</a></li>
+          {% comment %} <li><a href="{% url 'subject' %}#bca" class="btn">My Sql</a></li> {% endcomment %}
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="{% url 'aboutus' %}#director">Director & Chairman</a></li>
+          <li><a href="{% url 'policy' %}">Privacy Policy</a></li>
+          <li><a href="{% url 'term_serv' %}">Terms of Service</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'admission' %}">Online Admission Form</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section" >
+        <h4>Back to Top</h4>
+        <button class="top-button" onclick="scrollToTop()">↑ Top</button>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dofort Edu. All rights reserved.</p>
+      <p class = "developer">
+        made with ❤️ by Prince Kumar Pandit
+      </p>
+    </div>
+  </footer>
+  
+  
+  
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
+</body>
+</html>

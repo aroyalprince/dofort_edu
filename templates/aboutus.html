@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block head %} <link rel="stylesheet" href="{% static 'aboutus.css' %}">{% endblock %}
+{% block title %} About Us | Dofort Edu{% endblock title %}
+{% block body %}
+
+
+<div class="container_1">
+  <div class="about_institute">
+    <h2>Welcome to <span>Dofort Edu</span> 🎓</h2>
+    <p class="intro">
+      Your trusted destination for quality computerised accounting education and career-focused training. We equip students and professionals with practical, industry-relevant skills across a wide range of fields.
+    </p>
+
+    <div class="course_list">
+      <h3>Our Specialized Courses Include:</h3>
+      <ul>
+        <li><strong>Basic Computer Training:</strong> Windows, MS Office, Internet, and Typing.</li>
+        <li><strong>Advanced Excel:</strong> Excel functions, PivotTables, Macros, Dashboards, and more.</li>
+        <li><strong>Practical Accounting:</strong> Journal entries, Ledgers, Reconciliation, and Reports.</li>
+        <li><strong>Tally Prime with GST, TDS & Payroll:</strong> Hands-on practice with Tally, GST, and Payroll.</li>
+        <li><strong>GST Return Filing:</strong> Live filing of GSTR-1, GSTR-3B, and reconciliation.</li>
+        <li><strong>Income Tax Return Filing:</strong> Filing ITRs for individuals and businesses.</li>
+        <li><strong>SAP FICO:</strong> Financial Accounting & Controlling in real ERP environments.</li>
+        <li><strong>Web Designing:</strong> HTML, CSS, JS, Bootstrap, Django, and responsive design.</li>
+        <li><strong>Programming:</strong> Learn C, C++, Java, Python with real-world projects.</li>
+      </ul>
+    </div>
+
+    <p class="closing">
+       At <strong>Dofort Edu</strong>, we emphasize <em>practical training, expert guidance, and an up-to-date curriculum</em> to make our students job-ready. Whether you are a student, job seeker, or working professional, we have the right course to elevate your career.
+    </p>
+
+    <p class="join">
+      <strong>Join us today and unlock your potential in the digital world!</strong>
+    </p>
+  </div>
+</div>
+
+  <div class="container" id="director">
+    <div class="text-section">
+      <h1><span class="blue">Founder</span> & <span class="orange">Director</span></h1>
+      <p class="author"><strong>Amit Shaw</strong></p>
+      <p class="subtitle">Expert in Business Accounting & Taxation</p>
+      <div class="quote">❝</div>
+      <p>Mr. Amit Shaw is the Founder, Director, and Lead Faculty at Dofort Edu, a reputed centre for computer and professional training. 
+        <br><br>With over 12 years of rich experience in business accounting, taxation, and ERP systems, he has been the driving force behind the institute's practical and career-oriented approach.
+      </p>
+      <h4>Leadership & Vision:</h4>
+      <p>Under Mr. Shaw’s leadership, Dofort Edu has grown into a trusted name known for quality education, practical training, and placement-focused learning. He strongly believes in "learning by doing", and ensures that every student is trained not just for exams only, but for real-world business environments.</p>
+      <div class="quote_1">❝</div>
+    </div>
+    <div class="image-section">
+      <img src={% static 'images/dir3.WebP' %} alt="Chairman" />
+    </div>
+  </div>
+
+
+{%endblock%}

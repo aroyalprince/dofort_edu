@@ -1,0 +1,252 @@
+
+body {
+  background-color: #ECFAE5;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add background image on the right side */
+body::after {
+  content: "";
+  position: absolute;
+  top: 51.2%;
+  left: 55%;
+  transform: translateY(-50%);
+  background-image: url("images/students.WebP");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 49rem;
+  height: 57rem;
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none; /* So it won't block clicks */
+}
+
+/* Make sure content stays above background image */
+#carouselExampleCaptions,
+.about-dofort-container,
+.testimonial-carousel {
+  position: relative;
+  z-index: 1;
+}
+/* Default: hide the bottom image */
+.bottom-img {
+  display: none;
+}
+
+/* Show on small screens */
+@media (max-width: 768px) {
+  body::after {
+    display: none;
+  }
+
+  .bottom-img {
+    display: block;
+    background-image: url("images/student_2.WebP");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 0.8rem;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  
+  .carousel img {
+    height: 80vh; /* Reduced from 80vh to 60vh */
+    object-fit: cover;
+  }
+  
+  #carouselExampleCaptions {
+    padding: 20px; /* Smaller padding */
+    margin-top: 1rem;
+  }
+  
+
+  .about-dofort-container {
+    max-width: 1000px;
+    margin: 150px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .about-dofort {
+    padding: 40px 30px;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    position: relative;
+    right: 200px;
+    opacity: 0;
+    transform: translateX(120px); /* Slide in from right */
+    transition: all 1.2s ease;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+  .about-dofort.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .about-dofort::before {
+    display: none; /* Hide blue vertical bar */
+  }
+  
+  .about-dofort strong {
+    color: #213555;
+    font-size: 1.2rem;
+  }
+  
+
+  @media (max-width: 768px) {
+
+    body{
+      width:650px
+    }
+    .carousel {
+      width:650px;      
+    }
+    .carousel-inner{
+      height: 400px;
+    }
+    .carousel-item{
+      height: 400px;
+    }
+
+    .about-dofort-container {
+      margin:  auto;
+    }
+    .about-dofort{
+      right: 0px;
+    }
+    .about-dofort-left {
+      padding: 30px 20px;
+      font-size: 1rem;
+    }
+    .carousel img {
+      height: 40vh; /* Reduced from 80vh to 60vh */
+      object-fit: cover;
+    }
+    .carousel-indicators{
+      display: none;
+    }
+  }
+  
+  
+  
+  .testimonial-carousel {
+    text-align: center;
+    max-width: 1000px;
+    margin-left: 200px;
+   
+  }
+  
+  .carousel-images {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    border: 3px solid transparent;
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image.active {
+    transform: scale(1.4);
+    border-color: #213555;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #213555;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav:hover {
+    background-color: #213555;
+  }
+  
+  .testimonial-text {
+    max-width: 700px;
+  }
+  
+  .testimonial-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .testimonial-text p {
+    margin: 0.5rem 0;
+  }
+  
+  #quote {
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+
+  @media (max-width: 768px) {
+
+    .testimonial-carousel {
+      text-align: center;
+      max-width: 1000px;
+      margin-left: 0px;
+     
+    }
+
+  }
+  

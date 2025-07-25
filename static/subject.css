@@ -1,0 +1,42 @@
+
+  .container {
+    max-width: 900px;
+    margin-top: 45px ;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+  }
+  
+  .subject-card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-left: 5px solid #213555;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .subject-card h2 {
+    color: #213555;
+    margin-bottom: 12px;
+  }
+  
+  .subject-card ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+  
+  .subject-card ul li {
+    margin-bottom: 8px;
+  }
+  
+ 
+  .subject-card.zoom-effect {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(39, 174, 96, 0.4);
+  }
+  

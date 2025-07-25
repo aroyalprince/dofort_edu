@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'contact.css' %}">
+{% endblock %}
+{% block title %} contact | Dofort Edu {% endblock title %}
+
+{% block body %}
+
+<div class="contact-container">
+  <!-- Info Section -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p><i class="fas fa-envelope"></i> Email: support@yourdomain.com</p>
+    <p><i class="fas fa-phone"></i> Phone: +91 92393 44707</p>
+    <p><i class="fas fa-clock"></i> Working Hours: Mon - Fri, 10am - 6pm</p>
+    <p><i class="fas fa-map-marker-alt"></i> Address: Your Company, Street, City, India</p>
+  </div>
+
+  <!-- Form Section -->
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+{% endblock body %}
