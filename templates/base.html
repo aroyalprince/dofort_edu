@@ -163,7 +163,7 @@
 
   body {
     width: 650px;
-
+    
     
   }
 
@@ -409,25 +409,6 @@
     navLinks.classList.remove('active');
     overlay.classList.remove('active');
   });
-
-  function scalePage() {
-    const screenWidth = window.innerWidth;
-    const targetWidth = 650;
-
-    if (screenWidth < targetWidth) {
-      const scaleRatio = screenWidth / targetWidth;
-      document.body.style.transform = `scale(${scaleRatio})`;
-      document.body.style.width = `${targetWidth}px`;
-      document.body.style.overflowX = 'hidden';
-    } else {
-      document.body.style.transform = 'scale(1)';
-      document.body.style.width = '650px';
-      document.body.style.overflowX = 'unset';
-    }
-  }
-
-  scalePage();
-  window.addEventListener('resize', scalePage);
 </script>
 
   {% block body%} {% endblock body%}
