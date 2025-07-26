@@ -122,9 +122,30 @@ body::after {
 
   @media (max-width: 768px) {
 
-   
+    .carousel-caption {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+      padding: 0.8rem;
+      width: 90%;
+      text-align: center;
+      z-index: 2;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      
+    }
+    
     .carousel {
-      width:650px;      
+      width:100%;      
     }
     .carousel-inner{
       height: 400px;
@@ -144,7 +165,7 @@ body::after {
       font-size: 1rem;
     }
     .carousel img {
-      height: 40vh; /* Reduced from 80vh to 60vh */
+      height: 30vh; /* Reduced from 80vh to 60vh */
       object-fit: cover;
     }
     .carousel-indicators{
