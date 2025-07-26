@@ -5,9 +5,7 @@ class Enquiry(models.Model):
 
     name = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
-    course = models.CharField(max_length=122)
-    semester = models.CharField(max_length=122)
-    complaint = models.CharField(max_length=200)
+    Enquiry = models.CharField(max_length=200)
     date = models.DateField()
 
     def __str__(self):
