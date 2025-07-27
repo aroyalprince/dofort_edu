@@ -93,29 +93,31 @@
 <div class="about-dofort-container">
   <div class="about-dofort" id="aboutDofort">
     <p>
-      <strong>Dofort Edu</strong> is a forward-thinking educational platform dedicated to empowering students with practical, industry-relevant skills. Focused on excellence and innovation, Dofort Edu offers a range of professional courses in fields like web development, programming, data science, and more. With experienced faculty, interactive learning methods, and a student-centric approach, it bridges the gap between academic knowledge and real-world applications. Whether you're a beginner or looking to upskill, Dofort Edu provides flexible learning at your own pace, both online and offline. Its mission is to nurture talent, boost confidence, and build a brighter future through accessible, high-quality education for all learners.
+      <strong>Dofort Edu</strong> is a forward-thinking educational platform dedicated to empowering students with practical, industry-relevant skills. Specializing in core professional areas like <strong>Tally, GST, Business Accounting, TDS, and Income Tax Return (ITR) Filing</strong>, Dofort Edu is committed to bridging the gap between academic learning and real-world applications. With experienced faculty, interactive teaching methods, and a student-centric approach, it ensures deep conceptual understanding and hands-on experience. In addition to finance-based programs, Dofort Edu also offers training in <strong>web development and programming</strong>, and more—making it a complete skill-building hub. Whether you're a beginner or looking to upskill, Dofort Edu provides flexible learning at your own pace. Its mission is to nurture talent, boost confidence, and build a brighter future through accessible, high-quality education for all learners.
     </p>
+    
   </div>
 </div>
 
 <div class="testimonial-carousel">
   <div class="carousel-images">
     <div class="image active" data-index="0">
-      <img src="{% static 'images/sunil_shaw.WebP' %}" alt="Sunil Shaw" />
+      <img src="{% static 'images/neha_bag.WebP' %}" alt="Neha Bag" />
     </div>
     <div class="image" data-index="1">
       <img src="{% static 'images/joy_rang.WebP' %}" alt="Joy Rang" />
     </div>
     <div class="image" data-index="2">
-      <img src="{% static 'images/neha_bag.WebP' %}" alt="Neha Bag" />
+      <img src="{% static 'images/riya_shaw.WebP' %}" alt="Riya Shaw" />
     </div>
     <div class="image" data-index="3">
       <img src="{% static 'images/vikram_pandit.WebP' %}" alt="Vikram Pandit" />
     </div>
     <div class="image" data-index="4">
-      <img src="{% static 'images/riya_shaw.WebP' %}" alt="Riya Shaw" />
+      <img src="{% static 'images/sunil_shaw.WebP' %}" alt="Sunil Shaw" />
     </div>
   </div>
+
 
   <div class="carousel-content">
     <button class="nav left" onclick="prevSlide()">❮</button>
@@ -152,41 +154,43 @@
 
   const testimonials = [
   {
-    name: "Sunil Shaw",
-    designation: "Options Dealer ",
-    company: "Credent securities ltd",
+    name: "Neha Bag",
+    designation: "Accountant",
+    company: "East India Marketing Company",
     quote:
-      "Dofort Edu has completely transformed the way I see learning. The faculty is supportive, the teaching style is interactive, and the hands-on experience with projects has made me confident in my technical skills.",
+      `"I never thought accounting could be so interesting and engaging! The way the Dofort Edu team teaches with real-life business case studies and practical, hands-on examples made all the difference."`,
   },
   {
     name: "Joy Rang",
     designation: "Accountant",
     company: "Aarnaa steel | Shree Dhatree Steel",
     quote:
-      "As someone from a commerce background, I always feared accounting software. But the Tally with GST course at Dofort Edu was designed in such a simple and practical way that I could understand and apply everything in real time!",
-  },
-  {
-    name: "Neha Bag",
-    designation: "Accountant",
-    company: "East India Marketing Company",
-    quote:
-      "I never thought accounting could be so interesting! The way the Dofort Edu team teaches with real-life business case studies and practical examples made all the difference.",
-  },
-  {
-    name: "Vikram Kumar Pandit",
-    designation: "accountant",
-    company: "Supreme Electric Corporation",
-    quote:
-      "The Business Accounting course at Dofort Edu was a turning point in my career. I now understand how to manage ledgers, balance sheets, and financial reports efficiently. The practical assignments made the concepts crystal clear.",
+      `"As someone from a commerce background, I always feared accounting software. But the Tally with GST course at Dofort Edu was designed in such a simple and practical way that I could understand and apply everything in real time!"`,
   },
   {
     name: "Riya shaw",
     designation: "Executive Assistant",
     company: "Vedika Exports Tea Pvt. Led.",
     quote:
-      "Tally and GST training at Dofort Edu was hands-on and job-oriented. I was able to start working as an accountant right after completing the course. The trainers are very knowledgeable and always ready to help.",
+      `"Tally and GST training at Dofort Edu was hands-on and job-oriented. I was able to start working as an accountant right after completing the course. The trainers are very knowledgeable and always ready to help."`,
+  },
+  {
+    name: "Vikram Kumar Pandit",
+    designation: "accountant",
+    company: "Supreme Electric Corporation",
+    quote:
+      `"The Business Accounting course at Dofort Edu was a turning point in my career. I now understand how to manage ledgers, balance sheets, and financial reports efficiently. The practical assignments made the concepts crystal clear."`,
+  },
+  {
+    name: "Sunil Shaw",
+    designation: "Options Dealer",
+    company: "Credent securities ltd",
+    quote:
+      `"Dofort Edu has completely transformed the way I see learning. The faculty is supportive, the teaching style is interactive, and the hands-on experience with projects has made me confident in my technical skills."`,
   },
 ];
+
+
 
 let currentIndex = 0;
 
