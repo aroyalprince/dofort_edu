@@ -160,4 +160,8 @@
   .about_institute h2{
     margin-left: 10rem;
    }
+   #signature{
+    display: none !important;
+   }
 }
+

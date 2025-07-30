@@ -161,10 +161,8 @@
   .about_institute h2{
     margin-left: 10rem;
    }
- 
-  
 }
-.signature-image {
+#signature{
   position: absolute;
   right: -120px; /* Push toward the empty white space */
   bottom: 20px;
@@ -173,8 +171,4 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 768px) {
-  .signature-image {
-    display: none;
-  }
-}
+

@@ -2,10 +2,7 @@
 
 {% load static %}
 {% block head %} <link rel="stylesheet" href="{% static 'aboutus.css' %}">{% endblock %}
-{% block title %} About Us | Dofort Edu{% endblock title %}
 {% block body %}
-
-
 <div class="container_1">
   <div class="about_institute">
     <h2>Welcome to <span>Dofort Edu</span> 🎓</h2>
@@ -49,7 +46,8 @@
       </p>
       <h4>Leadership & Vision:</h4>
       <p>Under Mr. Shaw’s leadership, Dofort Edu has grown into a trusted name known for quality education, practical training, and placement-focused learning. He strongly believes in "learning by doing", and ensures that every student is trained not just for exams only, but for real-world business environments.</p>
-      <img src={% static 'images/signature.png' %} alt="sighn" style="width:400px; height:400px">
+      <img src="{% static 'images/signature.png' %}" alt="sign" style="width:400px; height:400px; display:block ;" id="signature">
+
     </div>
     <div class="image-section">
       <img src={% static 'images/dir3.WebP' %} alt="Chairman" style="margin-top: 100px;">
