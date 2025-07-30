@@ -166,49 +166,56 @@
     const track = document.getElementById('carouselTrack');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
-    
+  
     const cards = document.querySelectorAll('.card');
     const cardCount = cards.length;
     const cardsPerSlide = 3;
-    
-    let index = 3; // skip initial clones
-    let cardWidth = cards[0].offsetWidth + 16;
-    
+  
+    let index = 3;
+    let cardStyles = window.getComputedStyle(cards[0]);
+    let marginRight = parseInt(cardStyles.marginRight) || 0;
+    let cardWidth = cards[0].offsetWidth + marginRight;
+    let prevTranslate = -index * cardWidth;
+  
     function moveCarousel() {
       track.style.transition = 'transform 0.5s ease-in-out';
       track.style.transform = `translateX(-${index * cardWidth}px)`;
+      prevTranslate = -index * cardWidth;
     }
-    
+  
     function checkIndexAfterTransition() {
       if (index >= cardCount - cardsPerSlide) {
         index = 3;
         track.style.transition = 'none';
         track.style.transform = `translateX(-${index * cardWidth}px)`;
+        prevTranslate = -index * cardWidth;
       } else if (index <= 0) {
         index = cardCount - (cardsPerSlide * 2);
         track.style.transition = 'none';
         track.style.transform = `translateX(-${index * cardWidth}px)`;
+        prevTranslate = -index * cardWidth;
       }
     }
-    
+  
     nextBtn.addEventListener('click', () => {
       index++;
       moveCarousel();
     });
-    
+  
     prevBtn.addEventListener('click', () => {
       index--;
       moveCarousel();
     });
-    
+  
     track.addEventListener('transitionend', checkIndexAfterTransition);
-    
+  
     // Auto Scroll every 2s
-    setInterval(() => {
+    const autoScroll = setInterval(() => {
       index++;
       moveCarousel();
     }, 2000);
-    
+  
+    // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -217,6 +224,68 @@
         });
       });
     });
-
+  
+    // === Cursor & Touch Drag Support ===
+    let startX = 0;
+    let isDragging = false;
+  
+    // Mouse Events
+    track.addEventListener('mousedown', (e) => {
+      clearInterval(autoScroll);
+      isDragging = true;
+      startX = e.pageX;
+      track.style.cursor = 'grabbing';
+      track.style.transition = 'none';
+    });
+  
+    track.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const currentX = e.pageX;
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${prevTranslate + diff}px)`;
+    });
+  
+    track.addEventListener('mouseup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.cursor = 'grab';
+      const movedBy = e.pageX - startX;
+      if (movedBy < -50) index++;
+      if (movedBy > 50) index--;
+      moveCarousel();
+    });
+  
+    track.addEventListener('mouseleave', () => {
+      if (isDragging) {
+        isDragging = false;
+        track.style.cursor = 'grab';
+        moveCarousel();
+      }
+    });
+  
+    // Touch Events
+    track.addEventListener('touchstart', (e) => {
+      clearInterval(autoScroll);
+      isDragging = true;
+      startX = e.touches[0].clientX;
+      track.style.transition = 'none';
+    });
+  
+    track.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${prevTranslate + diff}px)`;
+    });
+  
+    track.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const movedBy = e.changedTouches[0].clientX - startX;
+      if (movedBy < -50) index++;
+      if (movedBy > 50) index--;
+      moveCarousel();
+    });
   </script>
+  
 {% endblock body %}

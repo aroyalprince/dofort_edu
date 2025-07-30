@@ -21,5 +21,18 @@
     
   </div>
 
+<script>
 
+
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  //for dragging
+  document.addEventListener("dragstart", function (e) {
+    if (e.target.nodeName === "IMG") {
+      e.preventDefault();
+    }
+  });
+</script>
 {% endblock body%}

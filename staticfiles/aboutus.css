@@ -11,7 +11,8 @@
   
   .text-section {
     flex: 2;
-    padding-right: 30px;
+  padding-right: 30px;
+  position: relative;
   }
   
   .image-section {
@@ -160,4 +161,20 @@
   .about_institute h2{
     margin-left: 10rem;
    }
+ 
+  
+}
+.signature-image {
+  position: absolute;
+  right: -120px; /* Push toward the empty white space */
+  bottom: 20px;
+  max-width: 160px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .signature-image {
+    display: none;
+  }
 }
