@@ -156,6 +156,7 @@ body::after {
 
     .about-dofort-container {
       margin:  auto;
+      text-align: center;
     }
     .about-dofort{
       right: 0px;
