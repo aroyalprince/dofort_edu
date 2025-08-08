@@ -15,8 +15,18 @@ class EnquiryForm(forms.ModelForm):
         fields = '__all__'
 
 
+
 class ContactMessageForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = '__all__'
- 
+        widgets = {
+            'message': forms.Textarea(attrs={
+                'placeholder': 'Enter your message here...',
+                'rows': 4
+            })
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['message'].label = ''
